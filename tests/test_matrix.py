@@ -1,6 +1,6 @@
 #Test module for matrix operations
 import pytest
-from matrix_operations import *
+from project.matrix_operations import *
 
 """Valid tests"""
 # tests for matrix_sum
