@@ -1,5 +1,5 @@
 import pytest
-from vector_operations import *
+from project.vector_operations import *
 """Valid tests"""
 # test for dot_product
 def test_dot_product_valid():
