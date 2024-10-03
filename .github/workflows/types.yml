@@ -1,0 +1,21 @@
+name: Run types checking
+on:
+  [push, pull request]
+jobs:
+  types_check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git represitory
+        uses: actions/checkout@v2
+      - name: Setbup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: |
+          pip install pytest
+          python -m pip install --upgrade pip
+          pip install pytest mypy
+      - name: Check types
+        run: |
+          mypy --config-file=.mypy.ini --ignore-missing-imports .
