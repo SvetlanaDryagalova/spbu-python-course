@@ -16,6 +16,7 @@ jobs:
           pip install pytest
           python -m pip install --upgrade pip
           pip install pytest mypy
+          pip install flake8 black
       - name: Run tests with pytest
         run: |
           pytest
