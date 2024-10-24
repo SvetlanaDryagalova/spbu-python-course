@@ -4,63 +4,43 @@ import threading
 class ThreadPool:
     """
     The `ThreadPool` class provides an implementation of a thread pool,
-
     allowing for concurrent execution of tasks using a specified number
-
     of worker threads.
-
     Parameters
-
-        num_threads: int   The number of threads to create in the pool.
-
+        num_threads: int
+            The number of threads to create in the pool.
     Attributes
-
-        num_threads: int   Stores the number of threads in the pool.
-
-        tasks: list    Holds the tasks to be executed.
-
-        lock : Lock objects    A threading lock to manage concurrent access.
-
+        num_threads: int
+            Stores the number of threads in the pool.
+        tasks: list
+            Holds the tasks to be executed.
+        lock : Lock objects
+            A threading lock to manage concurrent access.
         condition : Condition object
-
             Allow threads to wait for tasks to become available.
-
-        alive : bool    A flag indicates if the thread pool is still active.
-
-        threads : list    Holds the thread instances created for the pool.
-
+        alive : bool
+            A flag indicates if the thread pool is still active.
+        threads : list
+            Holds the thread instances created for the pool.
     Methods
-
         worker(self)
-
             Looks for tasks to execute until the thread pool is not alive.
-
         enqueue(self, task)
-
             Adds a task to the queue for execution by the worker threads.
-
         dispose(self)
-
             Signals the thread pool to terminate and waits
-
             for all worker threads to finish.
-
     """
 
     def __init__(self, num_threads):
         """
         Initializes the thread pool.
-
         Parameters
-
-            num_threads: int    The number of threads to create in the pool.
-
+            num_threads: int
+                The number of threads to create in the pool.
         Raises
-
             ValueError
-
                 If num_threads is not positive integer.
-
         """
         if not (num_threads > 0 and isinstance(num_threads, int)):
             raise ValueError("Number of threads must be positive integer.")
