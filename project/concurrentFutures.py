@@ -1,8 +1,9 @@
 import concurrent.futures
 import itertools
+import typing
 
 
-def product_sum(numbers: list[int]) -> int:
+def product_sum(numbers: typing.List[int]) -> int:
     """
         Calculates the sum of the numbers in the input list.
         Parameters
@@ -15,7 +16,7 @@ def product_sum(numbers: list[int]) -> int:
     return sum(numbers)
 
 
-def cartesian_product_sum(numbers: list[int]) -> int:
+def cartesian_product_sum(numbers: typing.List[int]) -> int:
     """
         Calculates sum of Cartesian product of the numbers in the input list.
         Parameters
