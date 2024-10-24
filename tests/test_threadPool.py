@@ -54,6 +54,7 @@ def test_multiple_task_execution():
 
     def add_task(x):
         results.append(task_func(x))
+
     for i in range(5):
         pool.enqueue(lambda x=i: add_task(x))
 
