@@ -2,11 +2,11 @@ import concurrent.futures
 import itertools
 
 
-def product_sum(numbers: list[int]):
+def product_sum(numbers: List[int]) -> int:
     """
         Calculates the sum of the numbers in the input list.
         Parameters
-            numbers : list[int]
+            numbers : List[int]
                 The list of numbers.
         Returns
             sum : int
@@ -15,11 +15,11 @@ def product_sum(numbers: list[int]):
     return sum(numbers)
 
 
-def cartesian_product_sum(numbers: list[int]):
+def cartesian_product_sum(numbers: List[int]) -> int:
     """
         Calculates sum of Cartesian product of the numbers in the input list.
         Parameters
-            numbers : list[int]
+            numbers : List[int]
                 The list of numbers.
         Returns
             total_sum : int
