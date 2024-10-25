@@ -1,7 +1,7 @@
 import pytest
 import time
 import threading
-from threadPool import ThreadPool
+from project.threadPool import ThreadPool
 
 
 def task_func(value):
