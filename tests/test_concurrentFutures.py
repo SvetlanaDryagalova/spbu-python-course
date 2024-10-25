@@ -1,5 +1,5 @@
 import pytest
-from project.concurrentFutures import product_sum, cartesian_product_sum
+from ..project.concurrentFutures import product_sum, cartesian_product_sum
 
 
 def test_product_sum():
