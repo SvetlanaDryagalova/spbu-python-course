@@ -1,7 +1,7 @@
 import pytest
 import time
 import threading
-from project.threadPool import ThreadPool
+from threadPool import ThreadPool
 
 
 def task_func(value):
@@ -23,7 +23,6 @@ def test_init_zero_num():
     # test with num_threads = 0
     with pytest.raises(ValueError):
         ThreadPool(0)
-    pool.dispose()
 
 
 def test_enqueue():
