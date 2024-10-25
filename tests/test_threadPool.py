@@ -16,18 +16,21 @@ def test_init():
     assert pool.num_threads == 3
     assert pool.alive is True
     assert len(pool.threads) >= 3
+    pool.dispose()
 
 
 def test_init_zero_num():
     # test with num_threads = 0
     with pytest.raises(ValueError):
         ThreadPool(0)
+    pool.dispose()
 
 
 def test_enqueue():
     # test for enqueue
     pool = ThreadPool(2)
     pool.enqueue(lambda: task_func(5))
+    pool.dispose()
     assert len(pool.tasks) == 1
 
 
@@ -36,6 +39,7 @@ def test_enqueue_non_callable_task():
     pool = ThreadPool(2)
     with pytest.raises(TypeError):
         pool.enqueue(42)
+    pool.dispose()
 
 
 def test_dispose():
