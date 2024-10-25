@@ -61,6 +61,7 @@ def test_multiple_task_execution():
     time.sleep(2)
     assert len(results) == 5
     assert sorted(results) == list(range(5))
+    pool.dispose()
 
 
 def test_enqueue_after_dispose():
