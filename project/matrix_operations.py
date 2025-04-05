@@ -13,7 +13,7 @@ def matrix_size(a: List[List[float]]):
     return [rows, cols]
 
 
-def matrix_sum(a: List[List[float]], b: List[List[float]]) -> List[List[float]]:
+def matrix_sum(a: List[List[float]], b: List[List[float]]):
     """
     Calculate the sum of two matrices.
 
@@ -58,7 +58,7 @@ def matrix_sum(a: List[List[float]], b: List[List[float]]) -> List[List[float]]:
     return c
 
 
-def matrix_multiply(a: List[List[float]], b: List[List[float]]) -> List[List[float]]:
+def matrix_multiply(a: List[List[float]], b: List[List[float]]):
     """
     Calculate the multiplication of two matrices.
 
