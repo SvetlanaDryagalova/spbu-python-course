@@ -51,7 +51,7 @@ def matrix_sum(a: List[List[float]], b: List[List[float]]):
         raise ValueError("Matrices must be of same dimensions!")
     if a is None or b is None:
         raise ValueError("Matrices must not be empty!")
-    c = [[0] * sizes[0]] * sizes[1]
+    c = [[0.0] * sizes[0]] * sizes[1]
     for i in range(sizes[0]):
         for j in range(sizes[1]):
             c[i][j] = float(a[i][j]) + float(b[i][j])
@@ -97,7 +97,7 @@ def matrix_multiply(a: List[List[float]], b: List[List[float]]):
         raise ValueError("Matrices cannot be multiplied because of the wrong sizes!")
     if a is None or b is None:
         raise ValueError("Matrices must not be empty!")
-    c = [[0] * a_size[0]] * b_size[1]
+    c = [[0.0] * a_size[0]] * b_size[1]
     for i in range(a_size[0]):
         for j in range(a_size[1]):
             c[i][j] = a[i][j] * b[j][i]
@@ -134,7 +134,7 @@ def matrix_transpose(a: List[List[float]]):
     if a is None:
         raise ValueError("Matrix must not be empty!")
     a_size = matrix_size(a)
-    ta = [[0] * a_size[1]] * a_size[0]
+    ta = [[0.0] * a_size[1]] * a_size[0]
     for i in range(a_size[0]):
         for j in range(a_size[1]):
             ta[j][i] = a[i][j]
