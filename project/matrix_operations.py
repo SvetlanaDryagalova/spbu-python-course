@@ -9,7 +9,7 @@ def matrix_size(a: List[List[float]]):
             raise ValueError("The rows of the matrix must be of the same length!")
     return [rows, cols]
 def matrix_sum(
-    a: List[List[float]]] = None, b: List[List[float]]] = None
+    a: List[List[float]] = None, b: List[List[float]] = None
 ) -> List[List[float]]:
     """
     Calculate the sum of two matrices.
