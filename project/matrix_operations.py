@@ -49,7 +49,7 @@ def matrix_sum(a: List[List[float]], b: List[List[float]]):
     sizes = matrix_size(a)
     if sizes != matrix_size(b):
         raise ValueError("Matrices must be of same dimensions!")
-    if any(a is None, b is None):
+    if a is None or b is None:
         raise ValueError("Matrices must not be empty!")
     c = [[0] * sizes[0]] * sizes[1]
     for i in range(sizes[0]):
@@ -95,12 +95,12 @@ def matrix_multiply(a: List[List[float]], b: List[List[float]]):
     b_size = matrix_size(b)
     if a_size[0] != b_size[1] or a_size[1] != b_size[0]:
         raise ValueError("Matrices cannot be multiplied because of the wrong sizes!")
-    if any(int(a is None), int(b is None)):
+    if a is None or b is None:
         raise ValueError("Matrices must not be empty!")
     c = [[0] * a_size[0]] * b_size[1]
     for i in range(a_size[0]):
         for j in range(a_size[1]):
-            c[i][j] = sum(a[i][j] * b[j][i])
+            c[i][j] = a[i][j] * b[j][i]
     return c
 
 
