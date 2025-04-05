@@ -99,7 +99,7 @@ def matrix_multiply(a: List[List[float]], b: List[List[float]]):
         raise ValueError("Matrices must not be empty!")
     c = [[0] * a_size[0]] * b_size[1]
     for i in range(a_size[0]):
-        for j in range(a_size[1])]):
+        for j in range(a_size[1])):
             c[i][j] = sum([a[i][j] * b[j][i]
     return c
 
