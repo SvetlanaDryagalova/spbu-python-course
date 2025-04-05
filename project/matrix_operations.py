@@ -104,7 +104,7 @@ def matrix_multiply(a: List[List[float]], b: List[List[float]]):
     return c
 
 
-def matrix_transpose(a: List[List[float]]) -> List[List[float]]:
+def matrix_transpose(a: List[List[int, float]]):
     """
 
     Calculate the multiplication of two matrices.
