@@ -1,4 +1,5 @@
 from math import sqrt, acos, degrees
+from typing import List
 
 
 def dot_product(v: List[float] = None, u: List[float] = None):
