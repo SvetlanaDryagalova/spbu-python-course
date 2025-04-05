@@ -95,11 +95,12 @@ def matrix_multiply(a: List[List[float]], b: List[List[float]]):
     b_size = matrix_size(b)
     if a_size[0] != b_size[1] or a_size[1] != b_size[0]:
         raise ValueError("Matrices cannot be multiplied because of the wrong sizes!")
-    if any(a is None, b is None):
+    if any(int(a is None), int(b is None)):
         raise ValueError("Matrices must not be empty!")
     c = [[0] * a_size[0]] * b_size[1]
     for i in range(a_size[0]):
-        c[i][j] = sum([a[i][j] * b[j][i] for j in range(a_size[1])])
+        for j in range(a_size[1])]):
+            c[i][j] = sum([a[i][j] * b[j][i]
     return c
 
 
