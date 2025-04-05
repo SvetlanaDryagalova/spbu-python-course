@@ -15,7 +15,7 @@ def matrix_size(a: List[List[float]]):
 
 def matrix_sum(
     a: List[List[float]] = None, b: List[List[float]] = None
-) -> list[list[float]]:
+) -> List[List[float]]:
     """
     Calculate the sum of two matrices.
 
