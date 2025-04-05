@@ -6,7 +6,7 @@ def matrix_size(a: List[List[float]]):
     Calculate the size of matrix and check if tro rows are not the same length.
     """
     rows = len(a)
-    col = len(a[0])
+    cols = len(a[0])
     for i in range(1, len(a)):
         if len(a[i]) != col:
             raise ValueError("The rows of the matrix must be of the same length!")
