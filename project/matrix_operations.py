@@ -54,7 +54,7 @@ def matrix_sum(a: List[List[float]], b: List[List[float]]):
     c = [[0] * sizes[0]] * sizes[1]
     for i in range(sizes[0]):
         for j in range(sizes[1]):
-            c[i][j] = float(a[i][j] + b[i][j])
+            c[i][j] = float(a[i][j]) + float(b[i][j])
     return c
 
 
