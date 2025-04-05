@@ -32,7 +32,7 @@ def dot_product(v: List[float], u: List[float]):
         not isinstance(el, float) for el in u
     ):
         raise TypeError("Coordinates of the vector must be float!")
-    if any(int(v is None), not(u is None)):
+    if v is None or u is None:
         raise ValueError("Vector must not be empty!")
     if len(v) != len(u):
         raise ValueError("Vectors must have the same length!")
