@@ -27,7 +27,7 @@ def dot_product(v: list[float] = None, u: list[float] = None):
         If the lengths of the vectors are not equal.
     """
     if any(not isinstance(el, float) for el in v) or any(
-            not isinstance(el, float) for el in u
+        not isinstance(el, float) for el in u
     ):
         raise TypeError("Coordinates of the vector must be float!")
     if any(v is None or u is None):
