@@ -100,7 +100,7 @@ def matrix_multiply(a: List[List[float]], b: List[List[float]]):
     c = [[0] * a_size[0]] * b_size[1]
     for i in range(a_size[0]):
         for j in range(a_size[1]):
-            c[i][j] = sum([a[i][j] * b[j][i]
+            c[i][j] = sum([a[i][j] * b[j][i])
     return c
 
 
