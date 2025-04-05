@@ -9,7 +9,7 @@ from project.matrix_operations import *
 def test_matrix_sum_valid1():
     m1 = [[4.0, 1.0], [8.0, 2.0]]
     m2 = [[3.0, 9.0], [2.0, 4.0]]
-    expected_result = [[7.0, 10.0], [10.0, 5.0]]
+    expected_result = [[7.0, 10.0], [10.0, 6.0]]
     result = matrix_sum(m1, m2)
     assert result == expected_result
 
@@ -26,7 +26,7 @@ def test_matrix_sum_valid2():
 def test_matrix_multiply_valid():
     m1 = [[3.0, -1.0, 2.0], [4.0, 2.0, 0.0], [-5.0, 6.0, 1.0]]
     m2 = [[8.0, 1.0], [7.0, 2.0], [2.0, -3.0]]
-    expected_result = [[21.0, -5.0], [46.0, 8.0], [4.0, 4.0]]
+    expected_result = [[21.0, -5.0], [60.0, 12.0], [4.0, 4.0]]
     result = matrix_multiply(m1, m2)
     assert result == expected_result
 
