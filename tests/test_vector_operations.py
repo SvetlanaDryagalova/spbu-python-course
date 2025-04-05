@@ -17,7 +17,7 @@ def test_dot_product_valid():
 # test for vector_length
 def test_vector_length_valid():
     v = [3.0, 4.0]
-    expected_result = 5.0
+    expected_result = 5
     result = vector_length(v)
     assert round(result, 2.0) == expected_result
 
