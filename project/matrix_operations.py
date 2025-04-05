@@ -1,3 +1,6 @@
+from typing import List
+
+
 def matrix_size(a: List[List[float]]):
     """
     Calculate the size of matrix and check if tro rows are not the same length.
