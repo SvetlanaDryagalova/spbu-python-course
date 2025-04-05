@@ -8,13 +8,13 @@ def matrix_size(a: List[List[float]]):
     rows = len(a)
     cols = len(a[0])
     for i in range(1, len(a)):
-        if len(a[i]) != col:
+        if len(a[i]) != cols:
             raise ValueError("The rows of the matrix must be of the same length!")
     return [rows, cols]
 
 
 def matrix_sum(
-    a: List[List[float]] = None, b: List[List[float]] = None
+    a: List[List[float]], b: List[List[float]]
 ) -> List[List[float]]:
     """
     Calculate the sum of two matrices.
@@ -61,7 +61,7 @@ def matrix_sum(
 
 
 def matrix_multiply(
-    a: List[List[float]] = None, b: List[List[float]] = None
+    a: List[List[float]], b: List[List[float]]
 ) -> List[List[float]]:
     """
     Calculate the multiplication of two matrices.
@@ -107,7 +107,7 @@ def matrix_multiply(
     return c
 
 
-def matrix_transpose(a: List[List[float]] = None) -> List[List[float]]:
+def matrix_transpose(a: List[List[float]]) -> List[List[float]]:
     """
 
     Calculate the multiplication of two matrices.
