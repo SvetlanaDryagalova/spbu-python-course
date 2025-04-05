@@ -54,7 +54,7 @@ def matrix_sum(a: List[List[float]], b: List[List[float]]):
     c = [[0] * sizes[0]] * sizes[1]
     for i in range(sizes[0]):
         for j in range(sizes[1]):
-            c[i][j] = a[i][j] + b[i][j]
+            c[i][j] = float(a[i][j] + b[i][j])
     return c
 
 
@@ -104,7 +104,7 @@ def matrix_multiply(a: List[List[float]], b: List[List[float]]):
     return c
 
 
-def matrix_transpose(a: List[List[int, float]]):
+def matrix_transpose(a: List[List[float]]):
     """
 
     Calculate the multiplication of two matrices.
