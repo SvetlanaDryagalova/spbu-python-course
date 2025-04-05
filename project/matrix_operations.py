@@ -131,7 +131,7 @@ def matrix_transpose(a: List[List[float]]) -> List[List[float]]:
     """
     if any(not isinstance(el, float) for el in a):
         raise TypeError("Elements of the matrix must be float!")
-    if any(a is None):
+    if a is None:
         raise ValueError("Matrix must not be empty!")
     a_size = matrix_size(a)
     ta = [[0] * a_size[1]] * a_size[0]
