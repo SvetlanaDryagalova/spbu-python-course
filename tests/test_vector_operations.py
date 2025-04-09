@@ -19,7 +19,7 @@ def test_vector_length_valid():
     v = [3.0, 4.0]
     expected_result = 5
     result = vector_length(v)
-    assert round(result, 2.0) == expected_result
+    assert round(result, 2) == expected_result
 
 
 # test for angle_vectors
@@ -29,7 +29,7 @@ def test_angle_vectors_valid():
     u = [0.0, 1.0]
     expected_result = 90.0
     result = angle_vectors(v, u)
-    assert round(result, 2.0) == expected_result
+    assert round(result, 2) == expected_result
 
 
 """Tests with invalid type"""
