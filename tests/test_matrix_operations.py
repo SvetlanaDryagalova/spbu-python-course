@@ -107,7 +107,7 @@ def test_matrix_multiply_unequal_length():
 def test_matrix_multiply_unequal_size():
     m1 = [[1.0, 2.0, 3.0], [5.0, 6.0, 7.0]]
 
-    m2 = [2.0, 2.0]
+    m2 = [[2.0, 2.0], [2.0, 2.0]]
     with pytest.raises(ValueError):
         matrix_multiply(m1, m2)
 
