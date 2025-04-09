@@ -6,13 +6,11 @@ import datetime
 @pytest.mark.parametrize("max_cache_size", [-1, "abc", 0.5])
 def test_cache_decorator_with_invalid_arguments(max_cache_size):
     """Tests that invalid values for `max_cache_size` raises an exception."""
-
-    @cache(max_cache_size)
-    def dummy_func():
-        pass
-
+    
     with pytest.raises(ValueError):
-        dummy_func()
+        @cache(max_cache_size)
+        def dummy_function():
+            return "This won't be called"
 
 
 def test_cache_works_for_positive_values():
