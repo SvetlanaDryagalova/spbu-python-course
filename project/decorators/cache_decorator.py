@@ -20,26 +20,24 @@ def cache(max_cache_size: int = 0):
     if not isinstance(max_cache_size, int):
         raise ValueError(f"`max_cache_size` must be an integer, got {type(max_cache_size).__name__}")
     
-    # Проверка на неотрицательность
     if max_cache_size < 0:
         raise ValueError("The parameter must be a non-negative integer")
 
     cached = {}
 
     def decorator(func):
-        @wraps(func)
-        def wrapper(*args, **kwargs):
-            # Формируем ключ для кэша
-            kwargs_key = frozenset(kwargs.items())
-            key = (args, kwargs_key)
+        func.cache = {}
+        func.cache_size = max_cache_size
+        
+        def wrapper(*args):
+            if args in func.cache:
+                return func.cache[args]
+            result = func(*args)
+            func.cache[args] = result
             
-            # Проверяем наличие ключа в кэше
-            if key in cached:
-                return cached[key]
-            
-            # Вычисляем результат и сохраняем его в кэш
-            result = func(*args, **kwargs)
-            cached[key] = result
+            if len(func.cache) > max_cache_size:
+                # Удаляем старый элемент (первый добавленный)
+                func.cache.pop(next(iter(func.cache)))
             return result
         
         return wrapper
