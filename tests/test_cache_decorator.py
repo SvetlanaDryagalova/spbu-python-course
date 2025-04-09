@@ -1,6 +1,6 @@
 import pytest
 from project.decorators.cache_decorator import cache
-import datetime
+from datatime import datetime
 
 
 @pytest.mark.parametrize("max_cache_size", [-1, "abc", 0.5])
@@ -10,7 +10,7 @@ def test_cache_decorator_with_invalid_arguments(max_cache_size):
     with pytest.raises(ValueError):
         @cache(max_cache_size)
         def dummy_function():
-            return "This won't be called"
+            pass
 
 
 def test_cache_works_for_positive_values():
