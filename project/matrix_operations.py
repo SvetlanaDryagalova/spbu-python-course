@@ -88,6 +88,8 @@ def matrix_multiply(a: List[List[float]], b: List[List[float]]):
 
         If the sizes of the matrices are 0.
     """
+    if not a or not b:
+        raise ValueError("Matrices must not be empty!")
     if any(not isinstance(el, float) for row in a for el in row) or any(
         not isinstance(el, float) for row in b for el in row
     ):
@@ -97,8 +99,6 @@ def matrix_multiply(a: List[List[float]], b: List[List[float]]):
     b_size = matrix_size(b)
     if a_size[1] != b_size[0]:
         raise ValueError("Matrices cannot be multiplied because of the wrong sizes!")
-    if not a or not b:
-        raise ValueError("Matrices must not be empty!")
     c = [[0.0 for _ in range(b_size[1])] for _ in range(a_size[0])]
     for i in range(a_size[0]):
         for j in range(b_size[1]):
