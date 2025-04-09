@@ -29,14 +29,15 @@ def cache(max_cache_size: int = 0):
         func.cache = {}
         func.cache_size = max_cache_size
         
-        def wrapper(*args):
-            if args in func.cache:
-                return func.cache[args]
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            key = (args, frozenset(kwargs.items()))
+    if key in func.cache:
+        return func.cache[key]
             result = func(*args)
             func.cache[args] = result
             
             if len(func.cache) > max_cache_size:
-                # Удаляем старый элемент (первый добавленный)
                 func.cache.pop(next(iter(func.cache)))
             return result
         
