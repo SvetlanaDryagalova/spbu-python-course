@@ -41,8 +41,8 @@ def matrix_sum(a: List[List[float]], b: List[List[float]]):
 
         If the sizes of the matrices are not equal.
     """
-    if any(not isinstance(el, float) for el in a) or any(
-        not isinstance(el, float) for el in b
+    if any(not isinstance(el, float) for row in a for el in row) or any(
+        not isinstance(el, float) for row in b for el in row
     ):
         raise TypeError("Elements of the matrices must be float")
 
@@ -86,8 +86,8 @@ def matrix_multiply(a: List[List[float]], b: List[List[float]]):
 
         If the sizes of the matrices are 0.
     """
-    if any(not isinstance(el, float) for el in a) or any(
-        not isinstance(el, float) for el in b
+    if any(not isinstance(el, float) for row in a for el in row) or any(
+        not isinstance(el, float) for row in b for el in row
     ):
         raise TypeError("Elements of the matrices must be float")
 
@@ -129,7 +129,7 @@ def matrix_transpose(a: List[List[float]]):
 
         If the size of the matrix is 0.
     """
-    if any(not isinstance(el, float) for el in a):
+    if any(not isinstance(el, float) for row in a for el in row):
         raise TypeError("Elements of the matrix must be float!")
     if a is None:
         raise ValueError("Matrix must not be empty!")
