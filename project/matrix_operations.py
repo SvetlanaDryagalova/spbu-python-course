@@ -5,10 +5,12 @@ def matrix_size(a: List[List[float]]):
     """
     Calculate the size of matrix and check if tro rows are not the same length.
     """
+    if not a:
+        raise ValueError("Matrix must not be empty!")
     rows = len(a)
     cols = len(a[0])
-    for i in range(1, len(a)):
-        if len(a[i]) != cols:
+    for row in a:
+        if len(row) != cols:
             raise ValueError("The rows of the matrix must be of the same length!")
     return [rows, cols]
 
@@ -49,7 +51,7 @@ def matrix_sum(a: List[List[float]], b: List[List[float]]):
     sizes = matrix_size(a)
     if sizes != matrix_size(b):
         raise ValueError("Matrices must be of same dimensions!")
-    if a is None or b is None:
+    if not a or not b:
         raise ValueError("Matrices must not be empty!")
     c = [[0.0 for _ in range(sizes[1])] for _ in range(sizes[0])]
     for i in range(sizes[0]):
@@ -95,12 +97,13 @@ def matrix_multiply(a: List[List[float]], b: List[List[float]]):
     b_size = matrix_size(b)
     if a_size[1] != b_size[0]:
         raise ValueError("Matrices cannot be multiplied because of the wrong sizes!")
-    if a is None or b is None:
+    if not a or not b:
         raise ValueError("Matrices must not be empty!")
     c = [[0.0 for _ in range(b_size[1])] for _ in range(a_size[0])]
     for i in range(a_size[0]):
-        for j in range(a_size[1]):
-            c[i][j] = a[i][j] * b[j][i]
+        for j in range(b_size[1]):
+            for k in range(a_size[1]):
+                c[i][j] += a[i][k] * b[k][j]
     return c
 
 
@@ -131,10 +134,10 @@ def matrix_transpose(a: List[List[float]]):
     """
     if any(not isinstance(el, float) for row in a for el in row):
         raise TypeError("Elements of the matrix must be float!")
-    if a is None:
+    if not a:
         raise ValueError("Matrix must not be empty!")
     a_size = matrix_size(a)
-    ta = [[0.0 for _ in range(a_size[1])] for _ in range(a_size[0])]
+    ta = [[0.0 for _ in range(a_size[0])] for _ in range(a_size[1])]
     for i in range(a_size[0]):
         for j in range(a_size[1]):
             ta[j][i] = a[i][j]
