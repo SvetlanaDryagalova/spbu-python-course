@@ -93,7 +93,6 @@ def matrix_multiply(a: List[List[float]], b: List[List[float]]):
 
     a_size = matrix_size(a)
     b_size = matrix_size(b)
-    
     if a_size[1] != b_size[0]:
         raise ValueError("Matrices cannot be multiplied because of the wrong sizes!")
     if a is None or b is None:
@@ -135,7 +134,7 @@ def matrix_transpose(a: List[List[float]]):
     if a is None:
         raise ValueError("Matrix must not be empty!")
     a_size = matrix_size(a)
-    ta = [[0.0] for _ in range(a_size[1])] for _ in range(a_size[0])
+    ta = [[0.0 for _ in range(a_size[1])] for _ in range(a_size[0])]
     for i in range(a_size[0]):
         for j in range(a_size[1]):
             ta[j][i] = a[i][j]
