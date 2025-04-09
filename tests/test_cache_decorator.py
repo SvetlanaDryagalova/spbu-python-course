@@ -1,6 +1,6 @@
 import pytest
 from project.decorators.cache_decorator import cache
-from datatime import datetime
+from datetime import datetime
 
 
 @pytest.mark.parametrize("max_cache_size", [-1, "abc", 0.5])
