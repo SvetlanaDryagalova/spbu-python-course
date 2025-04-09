@@ -32,8 +32,8 @@ def cache(max_cache_size: int = 0):
         @wraps(func)
         def wrapper(*args, **kwargs):
             key = (args, frozenset(kwargs.items()))
-    if key in func.cache:
-        return func.cache[key]
+            if key in func.cache:
+                return func.cache[key]
             result = func(*args)
             func.cache[args] = result
             
